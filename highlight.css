@@ -1,0 +1,31 @@
+/* Visual debugging for form elements */
+input[aria-label*="card"],
+input[placeholder*="card"],
+input[name*="card"],
+input[autocomplete*="cc-"] {
+    outline: 2px solid #ff6b6b !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3) !important;
+    background-color: rgba(255, 107, 107, 0.1) !important;
+}
+
+label:contains("Name on card"),
+label:contains("Card number"),
+label:contains("MM/YY"),
+label:contains("CVV"),
+label:contains("Expiration"),
+label:contains("Security code") {
+    background-color: rgba(255, 242, 0, 0.3) !important;
+    border: 1px dashed #ff6b6b !important;
+}
+
+/* Success state for filled fields */
+input[data-filled="true"] {
+    outline: 2px solid #51cf66 !important;
+    background-color: rgba(81, 207, 102, 0.1) !important;
+}
+
+/* Error state for problematic fields */
+input[data-fill-error="true"] {
+    outline: 2px solid #ff8787 !important;
+    background-color: rgba(255, 135, 135, 0.2) !important;
+}

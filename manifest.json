@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Facebook Card AutoFill",
+  "version": "1.0",
+  "description": "Autofill for Facebook billing",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "webNavigation",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.facebook.com/*",
+    "https://*.business.facebook.com/*",
+    "https://raw.githubusercontent.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.facebook.com/*", "https://*.business.facebook.com/*"],
+      "css": ["highlight.css"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
